@@ -6,7 +6,7 @@ const Careers = () => {
   const benefits = [
     {
       icon: Users,
-      title: 'Great Team',
+      title: 'Great Team and support',
       description: 'Work with experienced professionals and learn from the best.'
     },
     {
