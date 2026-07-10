@@ -22,6 +22,14 @@ const News = () => {
     },
     {
       id: 3,
+      title: 'SARMAK announces strategic partnership with Mantech Intellisys Pvt Ltd',
+      date: '2026-07-06',
+      excerpt: 'SARMAK and Mantech Intellisys join forces to deliver reliable, scalable digital transformation solutions.',
+      category: 'Partnership',
+      readTime: '3 min read'
+    },
+    {
+      id: 4,
       title: 'SARMAK launches EdTech Program',
       date: '2026-05-25',
       excerpt: 'Industry-leading security standards ensure maximum protection for client data.',

@@ -1,6 +1,7 @@
 import { ArrowRight, Building2, Award, Globe, Handshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
+import mantechLogo from '@/assets/mantech_logo.png';
 
 const Partners = () => {
   const partnerTypes = [
@@ -48,7 +49,16 @@ const Partners = () => {
     {
       title: 'Syncwell Infotech',
       description: 'A leading HR consulting firm driving workforce transformation. This collaboration brings together our expertise in technology solutions with Syncwell deep capabilities in human capital consulting — creating a unique synergy that helps organizations not only build the right systems but also build the right teams to run them.',
-      link: 'https://syncwell.co.in'
+      link: 'https://syncwell.co.in',
+      logo: '/syncwell_logo.png',
+      alt: 'Syncwell Infotech Logo'
+    },
+    {
+      title: 'Mantech Intellisys Pvt Ltd',
+      description: 'A strategic technology partner focused on delivering reliable and scalable digital transformation solutions. This partnership represents a shared vision of delivering innovative, reliable, and scalable technology solutions that help organizations accelerate their digital transformation journey.',
+      link: 'https://mantechintellisys.com',
+      logo: mantechLogo,
+      alt: 'Mantech Intellisys Logo'
     },
   //  {
     //  title: 'Technology Solutions',
@@ -162,7 +172,7 @@ const Partners = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {partners.map((partner, index) => (
                 <div key={index} className="glass-card p-8 hover-lift">
-                  {partner.title === 'Syncwell Infotech' ? (
+                  {partner.logo ? (
                     <div className="flex items-center justify-center gap-6 mb-6">
                       <img 
                         src="/logo.png" 
@@ -179,8 +189,8 @@ const Partners = () => {
                         className="hover:opacity-80 transition-opacity"
                       >
                         <img 
-                          src="/syncwell_logo.png" 
-                          alt="Syncwell Infotech Logo" 
+                          src={partner.logo} 
+                          alt={partner.alt} 
                           className="h-12 w-auto rounded-lg bg-white/10 p-2 cursor-pointer"
                         />
                       </a>
