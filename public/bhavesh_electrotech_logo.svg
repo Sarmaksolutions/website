@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <rect width="240" height="120" rx="20" fill="#081B30" />
+  <rect x="16" y="16" width="208" height="88" rx="16" fill="#132A4F" />
+  <text x="50%" y="45%" text-anchor="middle" fill="#F5C048" font-family="Inter, sans-serif" font-size="16" font-weight="700">Bhavesh</text>
+  <text x="50%" y="68%" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12">Electrotech</text>
+</svg>

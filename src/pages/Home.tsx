@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Brain, Cloud, Database, Code, GraduationCap, CheckCircle, TrendingUp, Users, Shield, Zap } from 'lucide-react';
 import SEO, { generateOrganizationSchema } from '@/components/SEO';
-import mantechLogo from '@/assets/mantech_logo.png';
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -62,6 +61,34 @@ const Home = () => {
     { icon: Zap, title: 'Cost Savings', description: 'Reduce operational costs by 10-20%' },
   ];
 
+  const trustedPartners = [
+    {
+      name: 'Syncwell Infotech',
+      logo: '/syncwell_logo.png',
+      link: 'https://syncwell.co.in',
+    },
+    {
+      name: 'Mantech Intellisys Pvt Ltd',
+      logo: '/Mantech_logo.png',
+      link: 'https://mantechintellisys.com',
+    },
+    {
+      name: 'Bhavesh Electrotech',
+      logo: '/bhavesh_electrotech_logo.svg',
+      link: 'https://www.indiamart.com/bhavesh-electrotech-india-private-limited/aboutus.html?srsltid=AfmBOopkXzVsKkmHqadXyB5rAH5AJ4dbNB3oTXsH_Hz_8b-msOl-t96N',
+    },
+    {
+      name: 'The Sevak.AI',
+      logo: '/sevak_ai_logo.svg',
+      link: 'https://thesevak-ai.previewtest.app/index.html',
+    },
+    {
+      name: 'OptOps.AI',
+      logo: '/optops_ai_logo.svg',
+      link: 'https://optops.ai',
+    },
+  ];
+
   return (
     <>
       <SEO 
@@ -70,6 +97,13 @@ const Home = () => {
         keywords="IT services India, managed IT services, AI IT solutions, cloud migration, database administration, DevOps services"
         schema={generateOrganizationSchema()}
       />
+
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
@@ -216,60 +250,6 @@ const Home = () => {
                     <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
                     <span> #BusinessGrowth #StrategicAlliance</span>
                   </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership Announcement */}
-      <section className="relative py-24 overflow-hidden bg-[#080a10]">
-        <div className="section-padding">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">Partnership News</span>
-              <h2 className="heading-lg text-white mb-4">
-                SARMAK enters a strategic collaboration with <span className="text-gradient">Mantech Intellisys Pvt Ltd</span>
-              </h2>
-              <p className="body-lg text-white/70 max-w-3xl mx-auto">
-                We are proud to partner with <a href="https://mantechintellisys.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">Mantech Intellisys Pvt Ltd</a> to deliver innovative, reliable, and scalable technology solutions that accelerate digital transformation for businesses across industries.
-              </p>
-            </div>
-
-            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95">
-              <article className="min-w-full px-8 py-10">
-                <div className="max-w-3xl mx-auto">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-                    <div>
-                      <p className="text-gold text-xs uppercase tracking-[0.35em] mb-2">Strategic Collaboration</p>
-                      <h3 className="text-3xl font-semibold text-white">
-                        SARMAK partners with Mantech Intellisys Pvt Ltd
-                      </h3>
-                    </div>
-                    <span className="text-white/60 text-sm uppercase tracking-[0.3em]">July 2026</span>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <img
-                      src={mantechLogo}
-                      alt="Mantech Intellisys Logo"
-                      className="h-16 w-auto rounded-lg bg-white/5 p-2"
-                    />
-                    <p className="text-white/70 text-sm max-w-2xl">
-                      Our collaboration with Mantech Intellisys Pvt Ltd unites our strengths for reliable, scalable digital transformation that delivers greater value to businesses across industries.
-                    </p>
-                  </div>
-
-                  <p className="body-lg text-white/70 mb-6">
-                    This partnership represents a shared vision of delivering innovative, reliable, and scalable technology solutions that help organizations accelerate their digital transformation journey.
-                  </p>
-                  <p className="body-lg text-white/70 mb-6">
-                    By combining our strengths, expertise, and customer-centric approach, we are well-positioned to create greater value for businesses across industries.
-                  </p>
-                  <p className="body-lg text-white/70">
-                    Learn more at <a href="https://mantechintellisys.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">mantechintellisys.com</a>.
-                  </p>
                 </div>
               </article>
             </div>
@@ -535,6 +515,44 @@ const Home = () => {
               <Link to="/service-plans" className="btn-outline">
                 View Service Plans
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted Partners Marquee */}
+      <section className="relative py-24 overflow-hidden bg-[#0b1018]">
+        <div className="section-padding">
+          <div className="max-w-6xl mx-auto text-center mb-12">
+            <h2 className="heading-lg text-white mb-4">
+              TRUSTED <span className="text-gradient">Partners </span>
+            </h2>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95">
+            <div
+              className="flex items-center gap-8 py-8 whitespace-nowrap"
+              style={{ animation: 'marquee 30s linear infinite' }}
+            >
+              {[...trustedPartners, ...trustedPartners].map((partner, index) => (
+                <a
+                  key={`${partner.name}-${index}`}
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-4 min-w-[280px] max-w-[320px] transition hover:bg-white/10"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-14 w-14 rounded-xl object-contain bg-white/5 p-2 flex-shrink-0"
+                  />
+                  <div className="text-left min-w-0">
+                    <p className="text-xs text-gold uppercase tracking-[0.25em] truncate">Partner</p>
+                    <p className="text-sm font-semibold text-white leading-snug truncate">{partner.name}</p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
