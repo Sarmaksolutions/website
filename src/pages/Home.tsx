@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight, Brain, Cloud, Database, Code, GraduationCap, CheckCircle, TrendingUp, Users, Shield, Zap } from 'lucide-react';
+import { ArrowRight, ChevronRight, Brain, Cloud, Database, Code, GraduationCap, CheckCircle, TrendingUp, Users, Shield, Zap, Server, Monitor, Layers } from 'lucide-react';
 import SEO, { generateOrganizationSchema } from '@/components/SEO';
 import { partners as trustedPartners } from '@/lib/partners';
 import { clients } from '@/lib/clients';
@@ -23,29 +23,47 @@ const Home = () => {
   }, []);
 
   const services = [
-    { 
-      icon: Brain, 
-      title: 'AI Solutions', 
-      description: 'AI-powered IT management and automation for intelligent infrastructure.',
+    {
+      icon: Brain,
+      title: 'AI Solutions',
+      description: 'AI-powered IT operations with predictive analytics, incident automation, and proactive health monitoring.',
       path: '/services/ai'
     },
-    { 
-      icon: Cloud, 
-      title: 'Cloud Services', 
-      description: 'AWS, Azure, GCP - seamless cloud migration and management.',
+    {
+      icon: Server,
+      title: 'Managed IT',
+      description: '24/7 managed support, service desk operations, and infrastructure reliability for enterprise systems.',
+      path: '/services/managed-it'
+    },
+    {
+      icon: Cloud,
+      title: 'Cloud Services',
+      description: 'Cloud migration, optimization, and governance across AWS, Azure, and GCP.',
       path: '/services/cloud'
     },
-    { 
-      icon: Database, 
-      title: 'Database', 
-      description: 'Oracle, SQL, NoSQL - expert database administration.',
+    {
+      icon: Database,
+      title: 'Database',
+      description: 'Oracle, SQL, and NoSQL expertise for performance, backup, and availability.',
       path: '/services/database'
     },
-    { 
-      icon: Code, 
-      title: 'DevOps', 
-      description: 'CI/CD pipelines, Kubernetes, and modern deployment.',
+    {
+      icon: Code,
+      title: 'DevOps',
+      description: 'CI/CD automation, container strategy, and modern release engineering.',
       path: '/services/devops'
+    },
+    {
+      icon: Monitor,
+      title: 'Operating Systems',
+      description: 'Linux, Windows, and Unix operations with patching, hardening, and support.',
+      path: '/services/operating-systems'
+    },
+    {
+      icon: Layers,
+      title: 'Middleware',
+      description: 'WebLogic, WebSphere, and integration layer management for enterprise applications.',
+      path: '/services/middleware'
     },
   ];
 
@@ -61,6 +79,24 @@ const Home = () => {
     { icon: Users, title: 'Expert Team', description: 'Certified professionals across all technologies' },
     { icon: Shield, title: 'Enhanced Security', description: 'Enterprise-grade security and compliance' },
     { icon: Zap, title: 'Cost Savings', description: 'Reduce operational costs by 10-20%' },
+  ];
+
+  const inHouseTools = [
+    {
+      title: 'Cloud Cost Optimizer',
+      description: 'Capture cloud spend, reduce waste, and improve ROI across AWS, Azure, and GCP.',
+      bullets: ['Real-time cost monitoring', 'Idle resource identification', 'Savings recommendation engine'],
+    },
+    {
+      title: 'Oracle Performance Review',
+      description: 'Deep Oracle diagnostics for SQL tuning, index health, and performance consistency.',
+      bullets: ['Query execution insights', 'Index & wait event analysis', 'Proactive health scoring'],
+    },
+    {
+      title: 'Infrastructure Efficiency',
+      description: 'Optimize compute, storage, and network usage with capacity planning and utilization intelligence.',
+      bullets: ['Rightsizing guidance', 'Utilization dashboards', 'Hybrid infrastructure alignment'],
+    },
   ];
 
 
@@ -121,10 +157,26 @@ const Home = () => {
             </h1>
             
             <p className="body-lg text-white/70 mb-8 max-w-2xl">
-              Empowering growth through technology and expert support. SARMAK delivers 
-              end-to-end IT solutions with AI-powered management, helping businesses 
-              transform, transition, and excel in the digital era.
+              Empowering growth through modern IT architecture, AI-driven operations, and proprietary tools. SARMAK combines cloud engineering, Oracle performance intelligence, and infrastructure automation to lower costs and improve uptime.
             </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm font-semibold text-white mb-2">Cloud Cost Control</p>
+                <p className="text-xs text-white/60">Automated spend monitoring to identify waste and optimize budgets.</p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm font-semibold text-white mb-2">Oracle Performance</p>
+                <p className="text-xs text-white/60">Deep database review and SQL tuning to boost availability and throughput.</p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm font-semibold text-white mb-2">Infrastructure Efficiency</p>
+                <p className="text-xs text-white/60">Right-sizing and utilization insights for hybrid and on-prem environments.</p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm font-semibold text-white mb-2">Managed AI Ops</p>
+                <p className="text-xs text-white/60">Intelligent monitoring, alerting, and automated remediation for business systems.</p>
+              </div>
+            </div>
             
             <div className="flex flex-wrap gap-4 mb-4">
               <Link to="/contact" className="btn-primary flex items-center gap-2 group">
@@ -162,6 +214,47 @@ const Home = () => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <span className="text-white/40 text-xs uppercase tracking-widest">Scroll</span>
           <div className="w-px h-8 bg-gradient-to-b from-gold to-transparent" />
+        </div>
+      </section>
+
+      {/* Technology & In-House Tools */}
+      <section className="relative py-24 overflow-hidden bg-[#090b12]">
+        <div className="section-padding">
+          <div className="max-w-6xl mx-auto text-center mb-12">
+            <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">Technology & Tools</span>
+            <h2 className="heading-lg text-white mb-4">SARMAK builds smarter IT operations with proprietary monitoring and optimization tools.</h2>
+            <p className="body-lg text-white/70 max-w-3xl mx-auto">
+              Our capability extends beyond managed services. We blend cloud architecture, Oracle database expertise, DevOps automation, and proprietary analytics to deliver visibility, performance, and cost efficiency.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3 mb-12">
+            {inHouseTools.map((tool) => (
+              <article key={tool.title} className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-xl font-semibold text-white mb-3">{tool.title}</h3>
+                <p className="text-white/70 mb-5">{tool.description}</p>
+                <ul className="space-y-3">
+                  {tool.bullets.map((bullet) => (
+                    <li key={bullet} className="flex gap-3 text-white/70">
+                      <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/in-house-tools" className="btn-primary inline-flex items-center gap-2">
+              Explore In-House Tools
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/contact" className="btn-outline inline-flex items-center gap-2">
+              Book a Demo
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -288,12 +381,15 @@ const Home = () => {
       <section className="relative py-24 bg-black/30">
         <div className="section-padding">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
               <div>
                 <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">Our Services</span>
                 <h2 className="heading-lg text-white">
                   Comprehensive <span className="text-gradient">IT Solutions</span>
                 </h2>
+                <p className="body-lg text-white/70 max-w-2xl mt-4">
+                  SARMAK delivers end-to-end IT expertise across AI operations, cloud, databases, DevOps, infrastructure, and middleware. We provide deep technical ownership and proven execution for every layer of your enterprise technology stack.
+                </p>
               </div>
               <Link to="/services/managed-it" className="mt-4 md:mt-0 text-gold hover:text-white transition-colors flex items-center gap-2 group">
                 View All Services
@@ -301,7 +397,7 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {services.map((service, index) => (
                 <Link 
                   key={index} 
@@ -315,9 +411,7 @@ const Home = () => {
                     {service.title}
                   </h3>
                   <p className="body-sm mb-4">{service.description}</p>
-                  <span className="text-gold text-sm flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn More <ArrowRight className="w-3 h-3" />
-                  </span>
+                  <div className="text-xs uppercase tracking-[0.3em] text-white/40">Expertise</div>
                 </Link>
               ))}
             </div>
@@ -476,7 +570,7 @@ const Home = () => {
       </section>
 
       {/* Our Clients Marquee */}
-      <section className="relative py-24 overflow-hidden bg-[#0b1018]">
+      <section className="relative py-2 overflow-hidden bg-[#0b1018]">
         <div className="section-padding">
           <div className="max-w-6xl mx-auto text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
@@ -497,7 +591,7 @@ const Home = () => {
                   <img
                     src={client.logo}
                     alt={client.title}
-                    className="h-25 w-25 rounded-xl object-contain"
+                    className="h-25 w-20 rounded-xl object-contain"
                   />
                   <div className="text-center min-w-0">
                     <p className="text-sm font-semibold text-white leading-snug line-clamp-1">{client.title}</p>

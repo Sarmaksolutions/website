@@ -36,6 +36,7 @@ import FAQ from '@/pages/FAQ';
 import Partners from '@/pages/Partners';
 import Resources from '@/pages/Resources';
 import News from '@/pages/News';
+import InHouseTools from '@/pages/InHouseTools';
 import BlogPost from '@/pages/BlogPost';
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
               <Route path="/sitemap" element={<Sitemap />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/partners" element={<Partners />} />
+              <Route path="/in-house-tools" element={<InHouseTools />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/news" element={<News />} />
             </Routes>

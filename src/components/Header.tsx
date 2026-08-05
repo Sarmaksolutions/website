@@ -50,6 +50,7 @@ const Header = () => {
 
   const resourcesDropdown = [
     { name: 'Blog', path: '/blog' },
+    { name: 'In-House Tools', path: '/in-house-tools' },
     { name: 'Resources', path: '/resources' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Service Plans', path: '/service-plans' },
@@ -162,7 +163,7 @@ const Header = () => {
             >
               <button
                 className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-md ${
-                  activeDropdown === 'resources' || ['/blog', '/resources', '/faq', '/service-plans'].some(p => location.pathname === p)
+                  activeDropdown === 'resources' || ['/blog', '/in-house-tools', '/resources', '/faq', '/service-plans'].some(p => location.pathname === p)
                     ? 'text-gold bg-gold/10' : 'text-white/80 hover:text-gold hover:bg-white/5'
                 }`}
               >
