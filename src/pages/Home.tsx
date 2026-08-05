@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Brain, Cloud, Database, Code, GraduationCap, CheckCircle, TrendingUp, Users, Shield, Zap } from 'lucide-react';
 import SEO, { generateOrganizationSchema } from '@/components/SEO';
+import { partners as trustedPartners } from '@/lib/partners';
+import { clients } from '@/lib/clients';
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -61,33 +63,6 @@ const Home = () => {
     { icon: Zap, title: 'Cost Savings', description: 'Reduce operational costs by 10-20%' },
   ];
 
-  const trustedPartners = [
-    {
-      name: 'Syncwell Infotech',
-      logo: '/syncwell_logo.png',
-      link: 'https://syncwell.co.in',
-    },
-    {
-      name: 'Mantech Intellisys Pvt Ltd',
-      logo: '/Mantech_logo.png',
-      link: 'https://mantechintellisys.com',
-    },
-    {
-      name: 'Bhavesh Electrotech',
-      logo: '/bhavesh_electrotech_logo.svg',
-      link: 'https://www.indiamart.com/bhavesh-electrotech-india-private-limited/aboutus.html?srsltid=AfmBOopkXzVsKkmHqadXyB5rAH5AJ4dbNB3oTXsH_Hz_8b-msOl-t96N',
-    },
-    {
-      name: 'The Sevak.AI',
-      logo: '/sevak_ai_logo.svg',
-      link: 'https://thesevak-ai.previewtest.app/index.html',
-    },
-    {
-      name: 'OptOps.AI',
-      logo: '/optops_ai_logo.svg',
-      link: 'https://optops.ai',
-    },
-  ];
 
   return (
     <>
@@ -163,7 +138,7 @@ const Home = () => {
               </Link>
                             <div className="flex flex-col gap-3">
                 <a href="https://learn.sarmak.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-white font-semibold shadow-2xl shadow-emerald-500/20 transition hover:bg-emerald-600">
-                  Join Free Training
+                  Join Free Webinar
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a href="https://learn.sarmak.in" target="_blank" rel="noopener noreferrer" className="text-sm text-emerald-300 hover:text-emerald-100 transition-colors">
@@ -197,14 +172,14 @@ const Home = () => {
             <div className="text-center mb-12">
               <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">Latest News</span>
               <h2 className="heading-lg text-white mb-4">
-                SARMAK is launching an industry-ready training program for college graduates
+                SARMAK is launching an industry-ready training program for college graduates & early-career professionals
               </h2>
               <p className="body-lg text-white/70 max-w-3xl mx-auto">
-                Learn in-demand technology skills with a free 4-week program covering Databases, Linux, DevOps, and AI. Visit <a href="https://learn.sarmak.in" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">learn.sarmak.in</a> to reserve your seat and learn more.
+                Learn in-demand technology and AI skills along with real-world use cases .For more details, Visit <a href="https://learn.sarmak.in" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">learn.sarmak.in</a> to reserve your seat and learn more.
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95">
+         {/*  <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95">
               <article className="min-w-full px-8 py-10 animate-blink">
                 <div className="max-w-3xl">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
@@ -216,7 +191,7 @@ const Home = () => {
                         </h3>
                       </div>
                     </div>
-                    <span className="text-white/60 text-sm uppercase tracking-[0.3em]">May 25, 2026</span>
+                    <span className="text-white/60 text-sm uppercase tracking-[0.3em]">July 25, 2026</span>
                   </div>
                   <div className="mb-6">
                     <img 
@@ -252,9 +227,9 @@ const Home = () => {
                   </div>
                 </div>
               </article>
-            </div>
-          </div>
-        </div>
+            </div> */}
+          </div> 
+        </div> 
       </section>
 
       {/* Mission Section */}
@@ -463,6 +438,77 @@ const Home = () => {
         </div>
       </section>
 
+    {/* Trusted Partners Marquee */}
+      <section className="relative py-24 overflow-hidden bg-[#0b1018]">
+        <div className="section-padding">
+          <div className="max-w-6xl mx-auto text-center mb-12">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+              Our <span className="text-gradient">Partners</span>
+            </h2>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95">
+            <div
+              className="flex items-center gap-8 py-20 whitespace-nowrap"
+              style={{ animation: 'marquee 10s linear infinite' }}
+            >
+              {[...trustedPartners, ...trustedPartners].map((partner, index) => (
+                <a
+                  key={`${partner.title}-${index}`}
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-col items-center justify-center gap-1 rounded-1xl border border-white/0 bg-white/5 px-4 py-6 min-w-[200px] max-w-[100px] h-[100px] transition hover:bg-white/30 hover:border-gold/30 group"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.title}
+                    className="h-25 w-25 rounded-xl object-contain bg-white/5 p-1"
+                  />
+                  <div className="text-center min-w-0">
+                    <p className="text-sm font-semibold text-white leading-snug line-clamp-1">{partner.title}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Clients Marquee */}
+      <section className="relative py-24 overflow-hidden bg-[#0b1018]">
+        <div className="section-padding">
+          <div className="max-w-6xl mx-auto text-center mb-12">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+              Our <span className="text-gradient">Clients</span>
+            </h2>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95">
+            <div
+              className="flex items-center gap-20 py-20 whitespace-nowrap"
+              style={{ animation: 'marquee 10s linear infinite' }}
+            >
+              {[...clients, ...clients].map((client, index) => (
+                <div
+                  key={`${client.title}-${index}`}
+                  className="inline-flex flex-col items-center justify-center gap-4 rounded-1xl border border-white/0 bg-white/5 px-4 py-6 min-w-[200px] max-w-[100px] h-[100px] transition hover:bg-white/30 hover:border-gold/30 group"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.title}
+                    className="h-25 w-25 rounded-xl object-contain"
+                  />
+                  <div className="text-center min-w-0">
+                    <p className="text-sm font-semibold text-white leading-snug line-clamp-1">{client.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="relative py-24">
         <div className="absolute inset-0 bg-hex-pattern opacity-20" />
@@ -520,43 +566,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trusted Partners Marquee */}
-      <section className="relative py-24 overflow-hidden bg-[#0b1018]">
-        <div className="section-padding">
-          <div className="max-w-6xl mx-auto text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">
-              TRUSTED <span className="text-gradient">Partners </span>
-            </h2>
-          </div>
-
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95">
-            <div
-              className="flex items-center gap-8 py-8 whitespace-nowrap"
-              style={{ animation: 'marquee 30s linear infinite' }}
-            >
-              {[...trustedPartners, ...trustedPartners].map((partner, index) => (
-                <a
-                  key={`${partner.name}-${index}`}
-                  href={partner.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-4 min-w-[280px] max-w-[320px] transition hover:bg-white/10"
-                >
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-14 w-14 rounded-xl object-contain bg-white/5 p-2 flex-shrink-0"
-                  />
-                  <div className="text-left min-w-0">
-                    <p className="text-xs text-gold uppercase tracking-[0.25em] truncate">Partner</p>
-                    <p className="text-sm font-semibold text-white leading-snug truncate">{partner.name}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+  
     </>
   );
 };

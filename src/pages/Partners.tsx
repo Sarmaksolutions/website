@@ -1,6 +1,7 @@
 import { ArrowRight, Building2, Award, Globe, Handshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
+import { partners } from '@/lib/partners';
 
 const Partners = () => {
   const partnerTypes = [
@@ -44,51 +45,7 @@ const Partners = () => {
     'VMware', 'Cisco', 'Dell', 'HP', 'SAP', 'Salesforce'
   ];
 
-  const partners = [
-    {
-      title: 'Syncwell Infotech',
-      description: 'A leading HR consulting firm driving workforce transformation. This collaboration brings together our expertise in technology solutions with Syncwell deep capabilities in human capital consulting — creating a unique synergy that helps organizations not only build the right systems but also build the right teams to run them.',
-      link: 'https://syncwell.co.in',
-      logo: '/syncwell_logo.png',
-      alt: 'Syncwell Infotech Logo'
-    },
-    {
-      title: 'Mantech Intellisys Pvt Ltd',
-      description: 'A strategic technology partner focused on delivering reliable and scalable digital transformation solutions. This partnership represents a shared vision of delivering innovative, reliable, and scalable technology solutions that help organizations accelerate their digital transformation journey.',
-      link: 'https://mantechintellisys.com',
-      logo: '/Mantech_logo.png',
-      alt: 'Mantech Intellisys Logo'
-    },
-    {
-      title: 'Bhavesh Electrotech (India) Private Limited',
-      description: 'A strategic technology partner focused on delivering reliable and scalable digital transformation solutions. This partnership represents a shared vision of delivering innovative, reliable, and scalable technology solutions that help organizations accelerate their digital transformation journey.',
-      link: 'https://www.indiamart.com/bhavesh-electrotech-india-private-limited/aboutus.html?srsltid=AfmBOopkXzVsKkmHqadXyB5rAH5AJ4dbNB3oTXsH_Hz_8b-msOl-t96N',
-      logo: '/bhavesh_electrotech_logo.svg',
-      alt: 'Bhavesh Electrotech Logo'
-    },
-    {
-      title: 'The Sevak.AI',
-      description: 'A strategic technology partner focused on delivering reliable and scalable digital transformation solutions. This partnership represents a shared vision of delivering innovative, reliable, and scalable technology solutions that help organizations accelerate their digital transformation journey.',
-      link: 'https://thesevak-ai.previewtest.app/index.html',
-      logo: '/sevak_ai_logo.svg',
-      alt: 'The Sevak.AI Logo'
-    },
-    {
-      title: 'OptOps.AI',
-      description: 'A strategic technology partner focused on delivering reliable and scalable digital transformation solutions. This partnership represents a shared vision of delivering innovative, reliable, and scalable technology solutions that help organizations accelerate their digital transformation journey.',
-      link: 'https://optops.ai',
-      logo: '/optops_ai_logo.svg',
-      alt: 'OptOps.AI Logo'
-    },
-  //  {
-    //  title: 'Technology Solutions',
-    //  description: 'Joining forces with technology providers to deliver cloud, data and enterprise application innovation.'
-   // },
-   // {
-    //  title: 'Strategic Alliances',
-     // description: 'Building long-term strategic partnerships that drive growth, co-delivery and market expansion.'
-   // }
-  ];
+
 
   return (
     <>

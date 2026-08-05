@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Brain, Cloud, Database, Code, GraduationCap, CheckCircle, TrendingUp, Users, Shield, Zap } from 'lucide-react';
 import SEO, { generateOrganizationSchema } from '@/components/SEO';
-import mantechLogo from '@/assets/mantech_logo.png';
+import { partners as trustedPartners } from '@/lib/partners';
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -223,7 +223,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partnership Announcement */}
+      {/* Partnership Announcement 
       <section className="relative py-24 overflow-hidden bg-[#080a10]">
         <div className="section-padding">
           <div className="max-w-6xl mx-auto">
@@ -276,7 +276,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+*/}
       {/* Mission Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hex-pattern opacity-30" />
