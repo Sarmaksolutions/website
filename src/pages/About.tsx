@@ -25,6 +25,13 @@ const About = () => {
      description: 'Brings over 18 years of transformative program leadership across enterprise technology delivery, P&L governance, and large-scale operations for global Tier-1 clients across the US and APAC. As Head of Business (Operations & AI Strategy), he oversees end-to-end operational governance, Agile at scale, and the strategic adoption of AI to drive delivery modernization and business performance across the organization.',
      expertise: ['Operational Excellence', 'Leadership', 'Program Management', 'AI Strategy']
     },
+        {
+    name: 'Indranil Sur',
+     role: 'Consultant – Technology Execution & Digital Strategy',
+     image: '/indranil.jpeg',
+     description: 'As an IT Program and Business Consultant with 20+ years of experience, he works to turn complex strategic goals into seamless technical solutions. From program governance, vendor alignment, and cross-functional leadership to modern tech stack optimization and go-to-market execution, he delivers lean, high-impact strategies that drive measurable business outcomes. Indranil offers a rare dual perspective: corporate precision matched with an entrepreneurial growth mindset.',
+     expertise: ['Technology Excellence', 'Leadership', 'Marketing', 'Digital Strategy']
+    },
    // {
     //  name: 'Sandesh Naik',
      // role: 'Advisory Board',

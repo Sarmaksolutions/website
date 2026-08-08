@@ -159,6 +159,7 @@ const Home = () => {
             <p className="body-lg text-white/70 mb-8 max-w-2xl">
               Empowering growth through modern IT architecture, AI-driven operations, and proprietary tools. SARMAK combines cloud engineering, Oracle performance intelligence, and infrastructure automation to lower costs and improve uptime.
             </p>
+            {/*
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-10">
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
                 <p className="text-sm font-semibold text-white mb-2">Cloud Cost Control</p>
@@ -177,7 +178,7 @@ const Home = () => {
                 <p className="text-xs text-white/60">Intelligent monitoring, alerting, and automated remediation for business systems.</p>
               </div>
             </div>
-            
+            */}
             <div className="flex flex-wrap gap-4 mb-4">
               <Link to="/contact" className="btn-primary flex items-center gap-2 group">
                 Get Started
@@ -217,43 +218,99 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Technology & In-House Tools */}
-      <section className="relative py-24 overflow-hidden bg-[#090b12]">
+      {/* About Us */}
+      <section className="relative py-24 bg-[#090b12]">
         <div className="section-padding">
-          <div className="max-w-6xl mx-auto text-center mb-12">
-            <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">Technology & Tools</span>
-            <h2 className="heading-lg text-white mb-4">SARMAK builds smarter IT operations with proprietary monitoring and optimization tools.</h2>
-            <p className="body-lg text-white/70 max-w-3xl mx-auto">
-              Our capability extends beyond managed services. We blend cloud architecture, Oracle database expertise, DevOps automation, and proprietary analytics to deliver visibility, performance, and cost efficiency.
-            </p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">About Us</span>
+              <h2 className="heading-lg text-white mb-4">SARMAK is your strategic IT partner for modern digital infrastructure.</h2>
+              <p className="body-lg text-white/70 max-w-3xl mx-auto">
+                We deliver high-impact technology services, product-led efficiency and training programs that help organizations run reliable, secure, and cost-effective operations. Our team combines deep technical know-how with practical execution to support complex enterprise environments.
+              </p>
+            </div>
 
-          <div className="grid gap-6 md:grid-cols-3 mb-12">
-            {inHouseTools.map((tool) => (
-              <article key={tool.title} className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
-                <h3 className="text-xl font-semibold text-white mb-3">{tool.title}</h3>
-                <p className="text-white/70 mb-5">{tool.description}</p>
-                <ul className="space-y-3">
-                  {tool.bullets.map((bullet) => (
-                    <li key={bullet} className="flex gap-3 text-white/70">
-                      <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-xl font-semibold text-white mb-3">Our Vision</h3>
+                <p className="text-white/70">To enable every business to operate on optimized, resilient, and intelligent infrastructure through best-in-class technology and services.</p>
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-xl font-semibold text-white mb-3">Our Mission</h3>
+                <p className="text-white/70">To simplify cloud, database, middleware and managed IT operations with proven delivery, industry-grade tools, and measurable business outcomes.</p>
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-xl font-semibold text-white mb-3">Why SARMAK</h3>
+                <p className="text-white/70">We combine service expertise, productized intelligence, and training capabilities to drive efficiency, reduce risk, and accelerate digital transformation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Offerings & Services */}
+      <section className="relative py-24 bg-black/30">
+        <div className="section-padding">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+              <div>
+                <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">Offerings & Services</span>
+                <h2 className="heading-lg text-white">
+                  Integrated IT Services, Curated Products, and Training Programs
+                </h2>
+                <p className="body-lg text-white/70 max-w-2xl mt-4">
+                  SARMAK delivers a balanced portfolio of managed IT services, productized optimization tools and specialized training to help businesses modernize infrastructure, improve performance, and empower teams.
+                </p>
+              </div>
+              <Link to="/services/managed-it" className="mt-4 lg:mt-0 btn-outline inline-flex items-center gap-2">
+                Explore Services
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-3 mb-12">
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">IT Services</h3>
+                <ul className="space-y-3 text-white/70">
+                  <li>Managed IT Operations and Service Desk</li>
+                  <li>Cloud Migration, DevOps and Managed Cloud</li>
+                  <li>Oracle, SQL and NoSQL Database Management</li>
+                  <li>Operating Systems, Middleware and Infrastructure Support</li>
                 </ul>
-              </article>
-            ))}
-          </div>
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">Curated Products</h3>
+                <ul className="space-y-3 text-white/70">
+                  <li>Cloud Cost Optimizer for AWS, Azure, GCP</li>
+                  <li>Oracle Performance Review and Tuning Platform</li>
+                  <li>Infrastructure Efficiency & Capacity Planning</li>
+                  <li>Monitoring, governance, and automation toolsets</li>
+                </ul>
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">Training</h3>
+                <ul className="space-y-3 text-white/70">
+                  <li>AI and Cloud upskilling for enterprise teams</li>
+                  <li>Oracle and database performance workshops</li>
+                  <li>DevOps, automation, and infrastructure training</li>
+                  <li>University and college learning programs</li>
+                </ul>
+              </div>
+            </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/in-house-tools" className="btn-primary inline-flex items-center gap-2">
-              Explore In-House Tools
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link to="/contact" className="btn-outline inline-flex items-center gap-2">
-              Book a Demo
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="grid gap-6 sm:grid-cols-3">
+              {[
+                { title: 'Faster Time-to-Value', value: '3x', description: 'Faster deployment and optimization cycles' },
+                { title: 'Lower Cost', value: '25%', description: 'Average savings through optimization and automation' },
+                { title: 'Higher Uptime', value: '99.8%', description: 'Improved reliability from proactive operations' },
+              ].map((metric) => (
+                <div key={metric.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center">
+                  <div className="text-4xl font-bold text-gold mb-3">{metric.value}</div>
+                  <h4 className="text-lg font-semibold text-white mb-2">{metric.title}</h4>
+                  <p className="text-white/70 text-sm">{metric.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -413,6 +470,95 @@ const Home = () => {
                   <p className="body-sm mb-4">{service.description}</p>
                   <div className="text-xs uppercase tracking-[0.3em] text-white/40">Expertise</div>
                 </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Products & Benefits */}
+      <section className="relative py-24 bg-[#090b12]">
+        <div className="section-padding">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+              <div>
+                <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">Technical Services</span>
+                <h2 className="heading-lg text-white">
+                  Deep Technology Expertise + Productized <span className="text-gradient">Efficiency</span>
+                </h2>
+                <p className="body-lg text-white/70 max-w-2xl mt-4">
+                  SARMAK blends technical services with proprietary products to deliver measurable business outcomes. From cloud cost governance to Oracle performance and infrastructure efficiency, we help clients operate with higher reliability and lower spend.
+                </p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <p className="text-xs uppercase tracking-[0.35em] text-white/50 mb-2">Business Impact</p>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-white/70 text-sm">
+                    <span>Cloud spend visibility</span>
+                    <span>87%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div className="h-full w-[87%] rounded-full bg-gold" />
+                  </div>
+                  <div className="flex items-center justify-between text-white/70 text-sm">
+                    <span>Oracle tuning effectiveness</span>
+                    <span>73%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div className="h-full w-[73%] rounded-full bg-gold" />
+                  </div>
+                  <div className="flex items-center justify-between text-white/70 text-sm">
+                    <span>Infrastructure utilization</span>
+                    <span>82%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div className="h-full w-[82%] rounded-full bg-gold" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-3 mb-12">
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-xl font-semibold text-white mb-4">Cloud Cost Intelligence</h3>
+                <p className="text-white/70 mb-5">Track cloud spend across providers and identify savings with built-in anomaly detection, rightsizing guidance, and budget alerts.</p>
+                <ul className="space-y-3 text-white/70">
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Automated cost allocation and tagging analysis</li>
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Idle resource and licence waste identification</li>
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Savings proposal scoring & tracking</li>
+                </ul>
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-xl font-semibold text-white mb-4">Oracle Performance Platform</h3>
+                <p className="text-white/70 mb-5">Improve database throughput and consistency with automated SQL diagnostics, index health analysis, and performance review workflows.</p>
+                <ul className="space-y-3 text-white/70">
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />SQL plan comparison and execution profiling</li>
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Wait event and session optimization insights</li>
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Weekly health and performance scorecards</li>
+                </ul>
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
+                <h3 className="text-xl font-semibold text-white mb-4">Infrastructure Efficiency</h3>
+                <p className="text-white/70 mb-5">Optimize compute, storage, and network capacity with utilization dashboards, right-sizing recommendations, and low-latency service alignment.</p>
+                <ul className="space-y-3 text-white/70">
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Capacity planning for hybrid environments</li>
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Performance vs cost tradeoff analysis</li>
+                  <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Operational readiness and resiliency checks</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-3">
+              {[
+                { title: 'Cost Efficiency', value: '42%', description: 'Average clients save on cloud spend.' },
+                { title: 'Performance Gain', value: '35%', description: 'Faster database and app response times.' },
+                { title: 'Operational Uptime', value: '99.8%', description: 'Improved availability through proactive monitoring.' },
+              ].map((metric) => (
+                <div key={metric.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center">
+                  <div className="text-4xl font-bold text-gold mb-3">{metric.value}</div>
+                  <h4 className="text-lg font-semibold text-white mb-2">{metric.title}</h4>
+                  <p className="text-white/70 text-sm">{metric.description}</p>
+                </div>
               ))}
             </div>
           </div>

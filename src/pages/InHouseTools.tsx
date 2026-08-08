@@ -5,18 +5,18 @@ import SEO, { generateOrganizationSchema } from '@/components/SEO';
 const tools = [
   {
     title: 'Cloud Cost Optimizer',
-    description: 'Analyze cloud spend, identify idle resources, and unlock savings across AWS, Azure, and GCP with real-time cost intelligence.',
-    bullets: ['Real-time spend monitoring', 'Idle resource discovery', 'Reserved capacity and rightsizing recommendations'],
+    description: 'A built-in engine that ingests multi-cloud billing and resource telemetry to deliver savings, budget governance, and spend accountability.',
+    bullets: ['Real-time cost visibility', 'Idle compute and storage detection', 'Reserved pricing & rightsizing recommendations', 'Forecasting and budget guardrails'],
   },
   {
     title: 'Oracle Performance Review',
-    description: 'Deep-dive Oracle health checks with SQL tuning, index optimization, and execution analysis for predictable database performance.',
-    bullets: ['SQL and execution plan insights', 'Index & wait-time diagnostics', 'Proactive performance baseline checks'],
+    description: 'A productized review process that blends SQL diagnostics, index health, and execution analytics to improve Oracle reliability and throughput.',
+    bullets: ['SQL plan and query tuning', 'Index health and fragmentation analysis', 'Wait event and session diagnostics', 'Proactive schema and backup readiness checks'],
   },
   {
     title: 'Infrastructure Efficiency',
-    description: 'Optimize your hybrid infrastructure with utilization insights, capacity planning, and operational efficiency scoring.',
-    bullets: ['Capacity planning dashboards', 'Resource utilization benchmarking', 'Cost and performance balance recommendations'],
+    description: 'A monitoring and optimization toolkit for hybrid infrastructure, helping you align capacity, utilization, and cost through smarter operations.',
+    bullets: ['Utilization benchmarking across environments', 'Capacity planning for compute and storage', 'Workload placement and lifecycle efficiency', 'Sustainability and cost-performance tradeoffs'],
   },
 ];
 
@@ -36,8 +36,23 @@ const InHouseTools = () => {
             <span className="text-gold text-sm font-medium uppercase tracking-widest mb-4 block">In-House Tools</span>
             <h1 className="heading-xl text-white mb-6">Proprietary tools that make IT operations smarter, faster, and more efficient.</h1>
             <p className="body-lg text-white/70 max-w-3xl mx-auto">
-              SARMAK builds operational intelligence for cloud and infrastructure management. Our proprietary tools deliver cost visibility, performance tuning, and infrastructure efficiency so your IT platform runs with higher reliability and lower spend.
+              SARMAK builds productized intelligence for IT operations. These in-house tools combine telemetry, analytics, and best-practice automation to reduce cloud waste, harden Oracle performance, and improve infrastructure efficiency for enterprise environments.
             </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3 mb-16">
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-3">Product-first Scale</h3>
+              <p className="text-white/70 text-sm">Designed as reusable products, these tools can be deployed rapidly and adapted to enterprise IT operations at scale.</p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-3">Actionable Intelligence</h3>
+              <p className="text-white/70 text-sm">Each tool turns raw telemetry into prioritized actions for cost savings, performance improvement, and operational stability.</p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-3">Consultative Delivery</h3>
+              <p className="text-white/70 text-sm">SARMAK pairs product capabilities with expert delivery so your team gets both technology and practical outcomes.</p>
+            </div>
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16">
@@ -52,17 +67,19 @@ const InHouseTools = () => {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {tools.map((tool) => (
-              <article key={tool.title} className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-8 shadow-2xl shadow-black/20">
-                <div className="flex items-center justify-between gap-4 mb-6">
-                  <div>
-                    <h2 className="text-2xl font-semibold text-white mb-2">{tool.title}</h2>
-                    <p className="text-sm text-white/70 leading-relaxed">{tool.description}</p>
+            {tools.map((tool) => {
+              const id = tool.title.toLowerCase().replace(/\s+/g, '-');
+              return (
+                <article key={tool.title} id={id} className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-8 shadow-2xl shadow-black/20">
+                  <div className="flex items-center justify-between gap-4 mb-6">
+                    <div>
+                      <h2 className="text-2xl font-semibold text-white mb-2">{tool.title}</h2>
+                      <p className="text-sm text-white/70 leading-relaxed">{tool.description}</p>
+                    </div>
+                    <div className="text-gold p-3 rounded-2xl bg-gold/10">
+                      <Shield className="w-6 h-6" />
+                    </div>
                   </div>
-                  <div className="text-gold p-3 rounded-2xl bg-gold/10">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                </div>
                 <ul className="space-y-3 mb-6">
                   {tool.bullets.map((bullet) => (
                     <li key={bullet} className="flex items-start gap-3 text-white/70">
@@ -76,7 +93,7 @@ const InHouseTools = () => {
                   <span>Industry-ready insights</span>
                 </div>
               </article>
-            ))}
+            )})}
           </div>
 
           <div className="mt-20 rounded-[2rem] border border-gold/20 bg-gradient-to-br from-[#111214] to-[#111214]/80 p-8">

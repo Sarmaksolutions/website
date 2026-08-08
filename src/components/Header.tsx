@@ -48,9 +48,14 @@ const Header = () => {
     { name: 'Careers', path: '/careers' },
   ];
 
+  const productsDropdown = [
+    { name: 'Cloud Cost Optimizer', path: '/in-house-tools#cloud-cost-optimizer', description: 'Real-time cloud spend intelligence' },
+    { name: 'Oracle Performance Review', path: '/in-house-tools#oracle-performance-review', description: 'Deep database performance diagnostics' },
+    { name: 'Infrastructure Efficiency', path: '/in-house-tools#infrastructure-efficiency', description: 'Capacity planning and utilization optimization' },
+  ];
+
   const resourcesDropdown = [
     { name: 'Blog', path: '/blog' },
-    { name: 'In-House Tools', path: '/in-house-tools' },
     { name: 'Resources', path: '/resources' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Service Plans', path: '/service-plans' },
@@ -58,6 +63,7 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
   const isServicesActive = location.pathname.startsWith('/services');
+  const isProductsActive = location.pathname === '/in-house-tools';
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg shadow-black/20">
@@ -124,6 +130,45 @@ const Header = () => {
               )}
             </div>
 
+            {/* Products Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('products')}
+            >
+              <button
+                className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-md ${
+                  isProductsActive ? 'text-gold bg-gold/10' : 'text-white/80 hover:text-gold hover:bg-white/5'
+                }`}
+              >
+                Products
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
+              </button>
+
+              {activeDropdown === 'products' && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-[#1c1d1b]/98 backdrop-blur-xl border border-gold/20 rounded-lg shadow-2xl shadow-black/50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="p-2">
+                    {productsDropdown.map((product) => (
+                      <Link
+                        key={product.path + product.name}
+                        to={product.path}
+                        className="flex items-start gap-3 p-3 rounded-md transition-all duration-300 hover:bg-gold/10 group"
+                      >
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gold/10 text-gold text-xs font-semibold">
+                          P
+                        </span>
+                        <div>
+                          <span className="block text-sm font-medium text-white group-hover:text-gold transition-colors">
+                            {product.name}
+                          </span>
+                          <span className="text-xs text-white/50">{product.description}</span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             {/* Company Dropdown */}
             <div
               className="relative"
@@ -163,7 +208,7 @@ const Header = () => {
             >
               <button
                 className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-md ${
-                  activeDropdown === 'resources' || ['/blog', '/in-house-tools', '/resources', '/faq', '/service-plans'].some(p => location.pathname === p)
+                  activeDropdown === 'resources' || ['/blog', '/resources', '/faq', '/service-plans'].some(p => location.pathname === p)
                     ? 'text-gold bg-gold/10' : 'text-white/80 hover:text-gold hover:bg-white/5'
                 }`}
               >
@@ -247,6 +292,19 @@ const Header = () => {
               ))}
             </div>
             
+            <div className="space-y-2">
+              <span className="block text-gold text-sm font-medium">Products</span>
+              {productsDropdown.map((product) => (
+                <Link
+                  key={product.path + product.name}
+                  to={product.path}
+                  className="block pl-4 py-1 text-white/70 hover:text-gold transition-colors text-sm"
+                >
+                  {product.name}
+                </Link>
+              ))}
+            </div>
+
             <div className="space-y-2">
               <span className="block text-gold text-sm font-medium">Resources</span>
               {resourcesDropdown.map((item) => (
