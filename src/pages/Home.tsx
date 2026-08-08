@@ -81,25 +81,6 @@ const Home = () => {
     { icon: Zap, title: 'Cost Savings', description: 'Reduce operational costs by 10-20%' },
   ];
 
-  const inHouseTools = [
-    {
-      title: 'Cloud Cost Optimizer',
-      description: 'Capture cloud spend, reduce waste, and improve ROI across AWS, Azure, and GCP.',
-      bullets: ['Real-time cost monitoring', 'Idle resource identification', 'Savings recommendation engine'],
-    },
-    {
-      title: 'Oracle Performance Review',
-      description: 'Deep Oracle diagnostics for SQL tuning, index health, and performance consistency.',
-      bullets: ['Query execution insights', 'Index & wait event analysis', 'Proactive health scoring'],
-    },
-    {
-      title: 'Infrastructure Efficiency',
-      description: 'Optimize compute, storage, and network usage with capacity planning and utilization intelligence.',
-      bullets: ['Rightsizing guidance', 'Utilization dashboards', 'Hybrid infrastructure alignment'],
-    },
-  ];
-
-
   return (
     <>
       <SEO 
