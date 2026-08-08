@@ -172,7 +172,7 @@ const Home = () => {
               </Link>
                             <div className="flex flex-col gap-3">
                 <a href="https://learn.sarmak.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-white font-semibold shadow-2xl shadow-emerald-500/20 transition hover:bg-emerald-600">
-                  Join Free Webinar
+                  Join Webinar
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a href="https://learn.sarmak.in" target="_blank" rel="noopener noreferrer" className="text-sm text-emerald-300 hover:text-emerald-100 transition-colors">
