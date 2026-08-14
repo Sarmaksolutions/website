@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 //import { Menu, X, ChevronDown, Brain, Cloud, Database, Server, Code, Settings, Layers, Monitor } from 'lucide-react';
-import { Menu, X, ChevronDown, Brain, Cloud, Database, Server, Code, Layers, Monitor } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, Cloud, Database, Server, Code, Layers, Monitor, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Twitter } from 'lucide-react';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -243,11 +244,53 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Link to="/contact" className="btn-primary text-sm">
-              Get Started
-            </Link>
+          {/* Social Media & CTA Section */}
+          <div className="hidden lg:flex items-center gap-4">
+            {/* Social Links */}
+            <div className="flex items-center gap-3 border-r border-white/10 pr-4">
+              <a 
+                href="https://www.linkedin.com/company/sarmak-solutions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://x.com/SarmakSolutions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=61588886422576" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/sarmaksolutions?igsh=NjV6c3pzNTVpeW84" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex items-center gap-3">
+              <Link to="/contact" className="px-4 py-2 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-md transition-colors duration-300">
+                Book a Demo
+              </Link>
+             {/*} <Link to="/contact" className="btn-primary text-sm">
+                Get Started
+              </Link> */}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -320,7 +363,45 @@ const Header = () => {
             
             <Link to="/contact" className="block py-2 text-white hover:text-gold transition-colors">Contact</Link>
             
-            <Link to="/contact" className="btn-primary w-full text-center mt-4">
+            <div className="flex items-center gap-3 py-4 border-t border-white/10 mt-4">
+              <a 
+                href="https://www.linkedin.com/company/sarmak-solutions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://x.com/SarmakSolutions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=61588886422576" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/sarmaksolutions?igsh=NjV6c3pzNTVpeW84" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
+            
+            <Link to="/contact" className="block w-full py-3 px-4 text-center bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-md transition-colors duration-300 mt-2">
+              Book a Demo
+            </Link>
+            <Link to="/contact" className="btn-primary w-full text-center">
               Get Started
             </Link>
           </div>

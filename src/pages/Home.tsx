@@ -113,18 +113,7 @@ const Home = () => {
         {/* Content */}
         <div className="relative z-10 section-padding w-full pt-32 pb-20">
           <div className="max-w-4xl">
-            {/* Logo */}
-            <Link to="/" className="inline-flex items-center gap-3 mb-8 group">
-              <img 
-                src="/logo.png" 
-                alt="SARMAK" 
-                className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
-              <div>
-                <span className="text-2xl font-bold text-white tracking-wider">SARMAK</span>
-                <span className="block text-sm text-gold font-mono tracking-widest">INNOVATE. TRANSFORM. EXCEL.</span>
-              </div>
-            </Link>
+
 
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 border border-gold/30 rounded-full mb-8 animate-fade-in">
               <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />

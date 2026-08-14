@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Linkedin, X, Facebook, Instagram, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -155,42 +155,6 @@ const Footer = () => {
                   {item.name}
                 </Link>
               ))}
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              <a 
-                href="https://www.linkedin.com/company/sarmak-solutions" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a 
-                href="https://x.com/SarmakSolutions" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
-              >
-                <X className="w-4 h-4" />
-              </a>
-              <a 
-                href="https://www.facebook.com/profile.php?id=61588886422576" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a 
-                href="https://www.instagram.com/sarmaksolutions?igsh=NjV6c3pzNTVpeW84" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-[#1c1d1b] transition-all duration-300"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </div>
