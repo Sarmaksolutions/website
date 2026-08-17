@@ -46,7 +46,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img src="/logo.png" alt="SARMAK" className="h-14 w-auto" />
               <div>
-                <span className="text-2xl font-bold text-white tracking-wider block">SARMAK</span>
+                <span className="text-2xl font-bold text-white tracking-wider block">SARMAK Solutions LLP</span>
                 <span className="text-xs text-gold font-mono tracking-widest">INNOVATE. TRANSFORM. EXCEL.</span>
               </div>
             </Link>
