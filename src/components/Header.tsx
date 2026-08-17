@@ -78,7 +78,7 @@ const Header = () => {
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:block">
-              <span className="text-xl font-bold text-white tracking-wider">SARMAK</span>
+              <span className="text-xl font-bold text-white tracking-wider">SARMAK Solutions LLP</span>
               <span className="block text-xs text-gold font-mono tracking-widest">INNOVATE. TRANSFORM. EXCEL.</span>
             </div>
           </Link>
