@@ -141,7 +141,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
             <p className="text-white/40 text-sm text-center md:text-left">
-              © {currentYear} SARMAK. All rights reserved.
+              © {currentYear} SARMAK Solutions LLP. All rights reserved.
             </p>
 
             {/* Legal Links */}
