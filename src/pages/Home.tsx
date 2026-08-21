@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight, Brain, Cloud, Database, Code, GraduationCap, CheckCircle, TrendingUp, Users, Shield, Zap, Server, Monitor, Layers } from 'lucide-react';
+import { ArrowRight, ChevronRight, Brain, Cloud, Database, Code, GraduationCap, CheckCircle, TrendingUp, Users, Shield, Zap, Server, Monitor, Layers, Calendar } from 'lucide-react';
 import SEO, { generateOrganizationSchema } from '@/components/SEO';
 import { partners as trustedPartners } from '@/lib/partners';
 import { clients } from '@/lib/clients';
@@ -251,10 +251,22 @@ const Home = () => {
               <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
                 <h3 className="text-2xl font-semibold text-white mb-4">Curated Products</h3>
                 <ul className="space-y-3 text-white/70">
-                  <li>Cloud Cost Optimizer for AWS, Azure, GCP</li>
-                  <li>Oracle Performance Review and Tuning Platform</li>
-                  <li>Infrastructure Efficiency & Capacity Planning</li>
-                  <li>Monitoring, governance, and automation toolsets</li>
+                  {[
+                    'Cloud Cost Optimizer for AWS, Azure, GCP',
+                    'Oracle Performance Review and Tuning Platform',
+                    'Infrastructure Efficiency & Capacity Planning',
+                    'Monitoring, governance, and automation toolsets',
+                  ].map((p) => (
+                    <li key={p} className="flex items-center justify-between">
+                      <span>{p}</span>
+                      <Link
+                        to={`/contact?subject=${encodeURIComponent('Book a Demo')}&description=${encodeURIComponent(p)}`}
+                        className="text-sm text-gold hover:underline ml-4"
+                      >
+                        Book a demo
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
@@ -497,6 +509,12 @@ const Home = () => {
                   <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Idle resource and licence waste identification</li>
                   <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Savings proposal scoring & tracking</li>
                 </ul>
+                <div className="mt-6">
+                  <Link to={`/contact?subject=${encodeURIComponent('Book a Demo')}&description=${encodeURIComponent('Cloud Cost Intelligence')}`} className="btn-outline inline-flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>Book a demo</span>
+                  </Link>
+                </div>
               </div>
               <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
                 <h3 className="text-xl font-semibold text-white mb-4">Oracle Performance Platform</h3>
@@ -506,6 +524,12 @@ const Home = () => {
                   <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Wait event and session optimization insights</li>
                   <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Weekly health and performance scorecards</li>
                 </ul>
+                <div className="mt-6">
+                  <Link to={`/contact?subject=${encodeURIComponent('Book a Demo')}&description=${encodeURIComponent('Oracle Performance Platform')}`} className="btn-outline inline-flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>Book a demo</span>
+                  </Link>
+                </div>
               </div>
               <div className="rounded-[2rem] border border-white/10 bg-slate-950/95 p-8">
                 <h3 className="text-xl font-semibold text-white mb-4">Infrastructure Efficiency</h3>
@@ -515,6 +539,12 @@ const Home = () => {
                   <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Performance vs cost tradeoff analysis</li>
                   <li className="flex gap-3 items-start"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-gold" />Operational readiness and resiliency checks</li>
                 </ul>
+                <div className="mt-6">
+                  <Link to={`/contact?subject=${encodeURIComponent('Book a Demo')}&description=${encodeURIComponent('Infrastructure Efficiency')}`} className="btn-outline inline-flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>Book a demo</span>
+                  </Link>
+                </div>
               </div>
             </div>
 

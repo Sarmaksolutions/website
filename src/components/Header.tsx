@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 //import { Menu, X, ChevronDown, Brain, Cloud, Database, Server, Code, Settings, Layers, Monitor } from 'lucide-react';
-import { Menu, X, ChevronDown, Brain, Cloud, Database, Server, Code, Layers, Monitor, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, Cloud, Database, Server, Code, Layers, Monitor, Linkedin, Facebook, Instagram, Calendar } from 'lucide-react';
 import { Twitter } from 'lucide-react';
 
 const Header = () => {
@@ -78,7 +78,7 @@ const Header = () => {
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:block">
-              <span className="text-xl font-bold text-white tracking-wider">SARMAK Solutions LLP</span>
+              <span className="text-xl font-bold text-white tracking-wider">SARMAK</span>
               <span className="block text-xs text-gold font-mono tracking-widest">INNOVATE. TRANSFORM. EXCEL.</span>
             </div>
           </Link>
@@ -149,21 +149,25 @@ const Header = () => {
                 <div className="absolute top-full left-0 mt-2 w-80 bg-[#1c1d1b]/98 backdrop-blur-xl border border-gold/20 rounded-lg shadow-2xl shadow-black/50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="p-2">
                     {productsDropdown.map((product) => (
-                      <Link
-                        key={product.path + product.name}
-                        to={product.path}
-                        className="flex items-start gap-3 p-3 rounded-md transition-all duration-300 hover:bg-gold/10 group"
-                      >
+                      <div key={product.path + product.name} className="flex items-start gap-3 p-3 rounded-md transition-all duration-300 hover:bg-gold/10">
                         <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gold/10 text-gold text-xs font-semibold">
                           P
                         </span>
-                        <div>
-                          <span className="block text-sm font-medium text-white group-hover:text-gold transition-colors">
+                        <div className="flex-1">
+                          <Link to={product.path} className="block text-sm font-medium text-white hover:text-gold transition-colors">
                             {product.name}
-                          </span>
+                          </Link>
                           <span className="text-xs text-white/50">{product.description}</span>
                         </div>
-                      </Link>
+                        <Link
+                          to={`/contact?subject=${encodeURIComponent('Book a Demo')}&description=${encodeURIComponent(product.name)}`}
+                          onClick={() => setActiveDropdown(null)}
+                          aria-label={`Book a demo for ${product.name}`}
+                          className="ml-2 p-2 rounded-md text-white/60 hover:text-gold hover:bg-white/5"
+                        >
+                          <Calendar className="w-4 h-4" />
+                        </Link>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -338,13 +342,14 @@ const Header = () => {
             <div className="space-y-2">
               <span className="block text-gold text-sm font-medium">Products</span>
               {productsDropdown.map((product) => (
-                <Link
-                  key={product.path + product.name}
-                  to={product.path}
-                  className="block pl-4 py-1 text-white/70 hover:text-gold transition-colors text-sm"
-                >
-                  {product.name}
-                </Link>
+                <div key={product.path + product.name} className="flex items-center justify-between">
+                  <Link to={product.path} className="block pl-4 py-1 text-white/70 hover:text-gold transition-colors text-sm">
+                    {product.name}
+                  </Link>
+                  <Link to={`/contact?subject=${encodeURIComponent('Book a Demo')}&description=${encodeURIComponent(product.name)}`} className="pr-4 text-sm text-emerald-400">
+                    Book a demo
+                  </Link>
+                </div>
               ))}
             </div>
 

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Linkedin, X, Facebook, Instagram } from 'lucide-react';
 import SEO from '@/components/SEO';
 
@@ -13,6 +14,25 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const subject = params.get('subject');
+    const description = params.get('description');
+    if (subject || description) {
+      setFormData(() => ({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        subject: subject ?? 'Book a Demo',
+        message: description
+          ? `Hi Sarmak Team,\n\nWe are very much interested in the product ${description}. Can you please schedule a DEMO for us on it.`
+          : ''
+      }));
+    }
+  }, [location.search]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -230,6 +250,7 @@ const Contact = () => {
                     >
                       <option value="" className="bg-[#1c1d1b]">Select a subject</option>
                       <option value="general" className="bg-[#1c1d1b]">General Inquiry</option>
+                      <option value="Book a Demo" className="bg-[#1c1d1b]">Book a Demo</option>
                       <option value="services" className="bg-[#1c1d1b]">IT Services</option>
                       <option value="ai" className="bg-[#1c1d1b]">AI Solutions</option>
                       <option value="training" className="bg-[#1c1d1b]">AI Training</option>
