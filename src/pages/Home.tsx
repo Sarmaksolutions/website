@@ -715,7 +715,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Clients Marquee */}
+      {/* Our Clients Marquee 
       <section className="relative py-2 overflow-hidden bg-[#0b1018]">
         <div className="section-padding">
           <div className="max-w-6xl mx-auto text-center mb-12">
@@ -748,7 +748,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+*/}
       {/* Benefits Section */}
       <section className="relative py-24">
         <div className="absolute inset-0 bg-hex-pattern opacity-20" />
